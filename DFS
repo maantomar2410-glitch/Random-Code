@@ -27,3 +27,12 @@ def inorder(node):
     inorder(node.left)   # this also first try :)
     print(node.val, end=' ')
     inorder(node.right)
+
+
+
+def postorder(node):
+    if node is None:
+        return
+    postorder(node.left)   # so easy:)
+    postorder(node.right)
+    print(node.val, end=' ')
