@@ -36,3 +36,16 @@ def postorder(node):
     postorder(node.left)   # so easy:)
     postorder(node.right)
     print(node.val, end=' ')
+
+
+def BFS(node):
+    if node is None:
+        return
+    queue=[node]
+    while queue:
+        current=queue.pop(0)
+        print(current.val, end=' ')
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
