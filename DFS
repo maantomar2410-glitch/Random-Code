@@ -20,3 +20,10 @@ def preorder_traversal(node):
     preorder_traversal(next)
     nextr=node.right
     preorder_traversal(nextr)
+
+def inorder(node):
+    if node is None:
+        return
+    inorder(node.left)   # this also first try :)
+    print(node.val, end=' ')
+    inorder(node.right)
