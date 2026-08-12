@@ -49,3 +49,28 @@ def BFS(node):
             queue.append(current.left)
         if current.right:
             queue.append(current.right)
+
+
+def preorder_stack(node):
+    if node is None:
+        return
+    stack=[node]
+    while stack:
+        current=stack.pop()
+        print(current.val, end=' ')
+        if current.right:
+            stack.append(current.right)
+        if current.left:
+            stack.append(current.left)
+
+def inorder_stack(node):
+    stack = []
+    current = node
+    while stack or current:          
+        if current:
+            stack.append(current)
+            current = current.left
+            continue
+        current = stack.pop()
+        print(current.val, end=' ')
+        current = current.right
